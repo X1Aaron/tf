@@ -3,7 +3,7 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_spot_instance_request" "pihole" {
+resource "aws_spot_instance_request" "pihole1" {
   ami           = "ami-0ac80df6eff0e70b5"
   spot_price    = "0.01"
   instance_type = "t3a.nano"
@@ -11,7 +11,7 @@ resource "aws_spot_instance_request" "pihole" {
   key_name   = "aaronstuder"
 
   tags = {
-    Name = "pihole"
+    Name = "pihole1"
   }
 }
 
