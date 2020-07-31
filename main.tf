@@ -3,6 +3,15 @@ provider "aws" {
   region  = "us-east-1"
 }
 
+resource "aws_spot_instance_request" "pihole" {
+  ami           = "ami-0ac80df6eff0e70b5"
+  instance_type = "t3a.nano"
+
+  tags = {
+    Name = "pihole"
+  }
+}
+
 #resource "aws_instance" "example" {
 #  ami           = "ami-0ac80df6eff0e70b5"
 #  instance_type = "t3a.micro"
